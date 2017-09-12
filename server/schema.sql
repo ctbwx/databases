@@ -2,27 +2,13 @@ CREATE DATABASE chat;
 
 USE chat;
 
-CREATE TABLE users (
-  id int NOT NULL AUTO_INCREMENT,
-  username varchar(255) unique,
-  PRIMARY KEY (id)
-);
-
-CREATE TABLE rooms (
-  id int NOT NULL AUTO_INCREMENT,
-  roomname varchar(255) unique,
-  PRIMARY KEY (id)
-);
-
 CREATE TABLE messages (
   id int NOT NULL AUTO_INCREMENT,
   message varchar(255),
-  user_name varchar(255),
-  room_name varchar(255),
+  username varchar(255),
+  roomname varchar(255),
   created_at Timestamp,
-  PRIMARY KEY (id),
-  FOREIGN KEY (user_name) REFERENCES users(username),
-  FOREIGN KEY (room_name) REFERENCES rooms(roomname)
+  PRIMARY KEY (id)
 );
  -- FOREIGN KEY (PersonID) REFERENCES Persons(PersonID)
 
