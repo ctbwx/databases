@@ -1,4 +1,5 @@
 var mysql = require('mysql');
+var model = require('../models');
 
 // Create a database connection and export it from this file.
 // You will need to connect with the user "root", no password,
@@ -16,9 +17,10 @@ connection.connect()
 connection.query("SELECT * FROM messages", function(err, rows, fields) {
   if (err) {
     console.log(err);
-  } else {
-    console.log(rows);
   }
-})
+});
+console.log(model.messages.post())
 
 connection.end()
+
+module.exports = connection;
